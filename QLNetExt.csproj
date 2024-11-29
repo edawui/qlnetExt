@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.9.2</VersionPrefix>
+    <TargetFrameworks>net45;net40;netstandard1.6;netcoreapp1.1</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);QL_NEGATIVE_RATES</DefineConstants>
+    <AssemblyName>QLNetExt</AssemblyName>
+    <PackageId>QLNetExt</PackageId>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.0</NetStandardImplicitPackageVersion>
+    <Authors>Edem Dawui</Authors>
+    <Company>Edem Dawui</Company>
+    <Description>A free/open-source library for quantitative finance</Description>
+    <Copyright>Copyright (c) 2017 Edem Dawui (edawui@gmail.com)</Copyright>
+    <PackageLicenseUrl>http://qlnet.sourceforge.net/License.html</PackageLicenseUrl>
+    <PackageProjectUrl>http://github.com/edawui/qlnetExt</PackageProjectUrl>
+    <PackageTags>QLNet QuantLib quantitative finance financial</PackageTags>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+ 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Numerics" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Numerics" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QLNet\QLNet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+http://gigi.nullneuron.net/gigilabs/multi-targeting-net-standard-class-libraries/
+
+         fixedNominal_ = Enumerable.Repeat<double>(fromVanilla.nominal, fromVanilla.fixedLeg().Count).ToList();
+            fixingDates_ = valueDates_.GetRange(0, valueDates_.Count - 1);//List<Date>(valueDates_.begin(), valueDates_.end() - 1);
+      if (!Enum.IsDefined(typeof(BusinessDayConvention), paymentConvention))//if (paymentConvention
+   // using Leg = List<CashFlow>;
